@@ -1,0 +1,39 @@
+table,
+td,
+th {
+  border: 1px solid black;
+}
+
+.columns {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  font-size: large;
+  height: 100%;
+}
+table {
+  border-collapse: collapse;
+  height: 100%;
+  width: 100%;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+  font: outline;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.container-row {
+  display: flex;
+  justify-content: center;
+  margin: 16px;
+}
+
+.table-container {
+  width: 500px;
+}
+.form-container {
+  width: 50%;
+}
