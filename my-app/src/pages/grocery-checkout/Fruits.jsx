@@ -1,48 +1,87 @@
 import "./Fruits.css";
-const Fruits = ({ appleQuan, orangeQuan, bananaQuan, pineappleQuan }) => {
+const Fruits = ({
+  title,
+  item,
+  firstItem,
+  secondItem,
+  thirdItem,
+  fourthItem,
+  firstQuan,
+  secondQuan,
+  thirdQuan,
+  fourthQuan,
+  firstRate,
+  secondRate,
+  thirdRate,
+  fourthRate,
+}) => {
+  const totalFruitsQuan =
+    firstQuan * 1 + secondQuan * 1 + thirdQuan * 1 + fourthQuan * 1;
+  const totalFruitsPrice =
+    firstQuan * firstRate +
+    secondQuan * secondRate +
+    thirdQuan * thirdRate +
+    fourthQuan * fourthRate;
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.dir(event.target);
     const name = event.target.elements.nameInput.value;
     const adhaar = event.target.elements.adhaarInput.value;
 
-    alert(`Name:${name}\nAdhaar Number:${adhaar}`);
+    alert(
+      `Name:${name}\nAdhaar Number:${adhaar}\n${title} Receipt:₹${totalFruitsPrice}`
+    );
   };
 
   //   const handleQuan = (event) => {
-  //     // const appleQuan = event.target.elements.appleQuan.value;
-  //     // const orangeQuan = event.target.elements.orangeQuan.value;
-  //     // const bananaQuan = event.target.elements.bananaQuan.value;
-  //     // const pineappleQuan = event.target.elements.pineappleQuan.value;
+  //     // const firstQuan = event.target.elements.firstQuan.value;
+  //     // const secondQuan = event.target.elements.secondQuan.value;
+  //     // const thirdQuan = event.target.elements.thirdQuan.value;
+  //     // const fourthQuan = event.target.elements.fourthQuan.value;
   //   };
 
   return (
     <>
-      <div className="title">Fruits</div>
+      <div className="title">{title}</div>
       <div className="container-row">
         <div className="table-container">
           <table>
             <tr>
-              <th>Fruit</th>
+              <th>{item}</th>
               <th>Quantity </th>
               <th>Rate</th>
               <th>Price</th>
             </tr>
             <tr>
-              <td>Apple 🍎</td>
-              <td>{appleQuan} </td>
+              <td>{firstItem}</td>
+              <td>{firstQuan} </td>
+              <td>{`₹${firstRate}`}</td>
+              <td>{`₹${firstQuan * firstRate}`}</td>
             </tr>
             <tr>
-              <td>Orange 🍊</td>
-              <td>{orangeQuan} </td>
+              <td>{secondItem}</td>
+              <td>{secondQuan} </td>
+              <td>{`₹${secondRate}`}</td>
+              <td>{`₹${secondQuan * secondRate}`}</td>
             </tr>
             <tr>
-              <td>Banana 🍌</td>
-              <td>{bananaQuan} </td>
+              <td>{thirdItem}</td>
+              <td>{thirdQuan} </td>
+              <td>{`₹${thirdRate}`}</td>
+              <td>{`₹${thirdQuan * thirdRate}`}</td>
             </tr>
             <tr>
-              <td>Pineapple 🍍</td>
-              <td>{pineappleQuan} </td>
+              <td>{fourthItem}</td>
+              <td>{fourthQuan} </td>
+              <td>{`₹${fourthRate}`}</td>
+              <td>{`₹${fourthQuan * fourthRate}`}</td>
+            </tr>
+            <tr>
+              <th>Total</th>
+              <th>{`₹${totalFruitsQuan}`}</th>
+              <th>🖕</th>
+              <th>{`₹${totalFruitsPrice}`}</th>
             </tr>
           </table>
         </div>
@@ -59,7 +98,9 @@ const Fruits = ({ appleQuan, orangeQuan, bananaQuan, pineappleQuan }) => {
               <label htmlFor="adhaarInput">Adhaar Number:</label>
               <input id="adhaarInput" type="string" />
             </div>
-            <button type="submit">Submit</button>
+            <div>
+              <button type="submit">Submit</button>
+            </div>
           </form>
         </div>
       </div>
