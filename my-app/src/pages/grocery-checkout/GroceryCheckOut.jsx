@@ -1,4 +1,4 @@
-import Fruits from "./Fruits";
+import Groceries from "./Groceries";
 
 const GroceryCheckOut = () => {
   const fruitList = [
@@ -13,8 +13,8 @@ const GroceryCheckOut = () => {
   ];
   return (
     <>
-      <Fruits title="Fruits" item="Fruit" values={fruitList} />
-      <Fruits title="Vegetables" item="Vegetable" values={veggieList} />
+      <Groceries title="Fruits" item="Fruit" values={fruitList} />
+      <Groceries title="Vegetables" item="Vegetable" values={veggieList} />
     </>
   );
 };

@@ -1,15 +1,24 @@
-import "./Fruits.css";
+import "./Groceries.css";
 
-const Fruits = ({ title, item, itemName, itemQuan, itemRate, values }) => {
+const Groceries = ({ title, item, values }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.dir(event.target);
     const name = event.target.elements.nameInput.value;
     const adhaar = event.target.elements.adhaarInput.value;
 
-    alert(`Name:${name}\nAdhaar Number:${adhaar}\n${title} Receipt:₹ nothing`);
+    alert(
+      `Name:${name}\nAdhaar Number:${adhaar}\n${title} Receipt:₹ ${totalPrice}`
+    );
   };
+  let totalQuan = 0;
 
+  let totalPrice = 0;
+  values.map(({ itemQuan, itemRate }) => (
+    <>
+      {(totalQuan += itemQuan)};{(totalPrice += itemRate * itemQuan)};
+    </>
+  ));
   return (
     <>
       <div className="title">{title}</div>
@@ -29,9 +38,17 @@ const Fruits = ({ title, item, itemName, itemQuan, itemRate, values }) => {
                   <td>{itemName}</td>
                   <td>{itemQuan}</td>
                   <td>{itemRate}</td>
+                  <td>{itemQuan * itemRate}</td>
                 </tr>
               </>
             ))}
+
+            <tr>
+              <th>Total</th>
+              <th>{totalQuan}</th>
+              <th></th>
+              <th>{totalPrice}</th>
+            </tr>
           </table>
         </div>
       </div>
@@ -56,4 +73,4 @@ const Fruits = ({ title, item, itemName, itemQuan, itemRate, values }) => {
     </>
   );
 };
-export default Fruits;
+export default Groceries;
