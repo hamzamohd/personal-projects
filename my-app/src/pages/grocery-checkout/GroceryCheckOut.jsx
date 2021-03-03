@@ -1,40 +1,20 @@
 import Fruits from "./Fruits";
 
 const GroceryCheckOut = () => {
+  const fruitList = [
+    { itemName: "apple", itemQuan: 20, itemRate: 5 },
+    { itemName: "orange", itemQuan: 35, itemRate: 3 },
+    { itemName: "banana", itemQuan: 24, itemRate: 6 },
+  ];
+  const veggieList = [
+    { itemName: "tomato", itemQuan: 40, itemRate: 4 },
+    { itemName: "onion", itemQuan: 20, itemRate: 5 },
+    { itemName: "carrot", itemQuan: 50, itemRate: 2 },
+  ];
   return (
     <>
-      <Fruits
-        title="Fruits"
-        item="Fruit"
-        firstItem="Apple 🍎"
-        secondItem="Orange 🍊"
-        thirdItem="Banana 🍌"
-        fourthItem="Pineapple 🍍"
-        firstQuan="20"
-        firstRate="5"
-        secondQuan="15"
-        secondRate="4"
-        thirdQuan="12"
-        thirdRate="3"
-        fourthQuan="5"
-        fourthRate="30"
-      />
-      <Fruits
-        title="Vegetables"
-        item="Vegetable"
-        firstItem="Tomato 🍅"
-        secondItem="Carrot 🥕"
-        thirdItem="Cabbage 🥬"
-        fourthItem="Onion 🧅"
-        firstQuan="30"
-        firstRate="2"
-        secondQuan="20"
-        secondRate="3"
-        thirdQuan="5"
-        thirdRate="10"
-        fourthQuan="50"
-        fourthRate="4"
-      />
+      <Fruits title="Fruits" item="Fruit" values={fruitList} />
+      <Fruits title="Vegetables" item="Vegetable" values={veggieList} />
     </>
   );
 };
