@@ -12,10 +12,10 @@ const GroceryCheckOut = () => {
     { itemName: "carrot", itemQuan: 50, itemRate: 2 },
   ];
   return (
-    <>
+    <div className="page-div">
       <Groceries title="Fruits" item="Fruit" values={fruitList} />
       <Groceries title="Vegetables" item="Vegetable" values={veggieList} />
-    </>
+    </div>
   );
 };
 export default GroceryCheckOut;

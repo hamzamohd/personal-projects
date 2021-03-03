@@ -14,11 +14,16 @@ const Groceries = ({ title, item, values }) => {
   let totalQuan = 0;
 
   let totalPrice = 0;
-  values.map(({ itemQuan, itemRate }) => (
-    <>
-      {(totalQuan += itemQuan)};{(totalPrice += itemRate * itemQuan)};
-    </>
-  ));
+  values.forEach(({ itemQuan, itemRate }) => {
+    totalQuan += itemQuan;
+    totalPrice += itemRate * itemQuan;
+  });
+
+  // values.map(({ itemQuan, itemRate }) => (
+  //   <>
+  //     {(totalQuan += itemQuan)};{(totalPrice += itemRate * itemQuan)};
+  //   </>
+  // ));
   return (
     <>
       <div className="title">{title}</div>
@@ -56,15 +61,15 @@ const Groceries = ({ title, item, values }) => {
       <div className="container-row">
         <div className="form-container">
           <form onSubmit={handleSubmit}>
-            <div>
+            <div className="form-div">
               <label htmlFor="nameInput">Name:</label>
               <input id="nameInput" type="text" />
             </div>
-            <div>
+            <div className="form-div">
               <label htmlFor="adhaarInput">Adhaar Number:</label>
               <input id="adhaarInput" type="string" />
             </div>
-            <div>
+            <div className="button">
               <button type="submit">Submit</button>
             </div>
           </form>
