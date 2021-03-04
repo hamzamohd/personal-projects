@@ -1,11 +1,11 @@
 // import logo from "./logo.svg";
 import "./App.css";
-import GroceryCheckOut from "./pages/grocery-checkout/GroceryCheckOut";
-import SingerBoys from "./pages/singer-boys/SingerBoys";
+// import GroceryCheckOut from "./pages/grocery-checkout/GroceryCheckOut";
+import ListMarks from "./pages/grade-list/ListMarks";
 
 function App() {
-  return <GroceryCheckOut />;
-  // return <SingerBoys />;
+  // return <GroceryCheckOut />;
+  return <ListMarks />;
 }
 
 export default App;
