@@ -1,39 +1,36 @@
 const GradeList = ({ newList }) => {
-  // let reaction = "";
-  // let grade = "";
+  let reactions = [];
+  let grades = [];
+  for (let i = 0; i < newList.length; i++) {
+    if (newList[i].score > 40) {
+      reactions.push("😀");
+    }
+    if (newList[i].score < 40) {
+      reactions.push("😞");
+    }
+  }
 
-  newList.forEach(({ score, reaction }) => {
-    if (score > 40) {
-      reaction = "😀";
+  for (let i = 0; i < newList.length; i++) {
+    if (newList[i].score > 80) {
+      grades.push("A");
     }
-    if (score < 40) {
-      reaction = "😞";
+    if (newList[i].score > 60 && newList[i].score < 80) {
+      grades.push("B");
     }
-  });
-  newList.forEach(({ score, grade }) => {
-    if (score > 80) {
-      grade = "A";
+    if (newList[i].score > 40 && newList[i].score < 60) {
+      grades.push("C");
     }
-    if (score > 60 && score < 80) {
-      grade = "B";
+    if (newList[i].score < 40) {
+      grades.push("D");
     }
-    if (score > 40 && score < 60) {
-      grade = "C";
-    }
-    if (score < 40) {
-      grade = "D";
-    }
-  });
-  return (
-    <>
-      <ul>
-        {newList.map(({ id, name, score, grade, reaction }) => (
-          <>
-            <li>{`ID = ${id} Name = ${name} Score = ${score} ${reaction} Grade = ${grade} `}</li>
-          </>
-        ))}
-      </ul>
-    </>
-  );
+  }
+
+  const nameList = [];
+  for (let i = 0; i < newList.length; i++) {
+    nameList.push(
+      <li>{`ID = ${newList[i].id} Name = ${newList[i].name} Score = ${newList[i].score}  ${reactions[i]} Grade = ${grades[i]}`}</li>
+    );
+  }
+  return <ul>{nameList}</ul>;
 };
 export default GradeList;
