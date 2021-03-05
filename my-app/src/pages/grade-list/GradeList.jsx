@@ -9,7 +9,6 @@ const GradeList = ({ newList }) => {
       reactions.push("😞");
     }
   }
-
   for (let i = 0; i < newList.length; i++) {
     if (newList[i].score > 80) {
       grades.push("A");

@@ -1,11 +1,13 @@
 // import logo from "./logo.svg";
 import "./App.css";
 // import GroceryCheckOut from "./pages/grocery-checkout/GroceryCheckOut";
-import ListMarks from "./pages/grade-list/ListMarks";
+// import ListMarks from "./pages/grade-list/ListMarks";
+import Learnings from "./pages/learnings/Learnings";
 
 function App() {
   // return <GroceryCheckOut />;
-  return <ListMarks />;
+  // return <ListMarks />;
+  return <Learnings />;
 }
 
 export default App;
